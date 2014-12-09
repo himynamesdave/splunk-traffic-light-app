@@ -1,0 +1,22 @@
+/* Hi! I hope this code lights you up. If not, say hello @himynamesdave / support@splunkstart.com */
+.severe.single-value:before {
+    background-repeat: no-repeat;
+    background-image: url('/red-light-118x300.png');
+    color: #ff1f24;
+}
+.elevated.single-value:before {
+    background-repeat: no-repeat;
+    background-image: url('../orange-light-118x300.png');
+    color: #ffb800;
+}
+.low.single-value:before {
+    background-repeat: no-repeat;
+    background-image: url('/green-light-118x300.png');
+    color: #00b932;
+}
+.icon-only.single-value:before {
+    font-size: 65px;
+}
+.icon-only .single-result {
+    display: none;
+}

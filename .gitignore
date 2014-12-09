@@ -1,0 +1,5 @@
+# Mac crap
+.DS_Store
+
+#Ignore these directories
+static/raw-graphics/*

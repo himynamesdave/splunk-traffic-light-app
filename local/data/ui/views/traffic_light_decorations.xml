@@ -1,4 +1,4 @@
-<dashboard stylesheet="traffic-light.css">
+<dashboard stylesheet="trafficlight.css">
   <label>Traffic Light Decorations</label>
   <description>Examples of how to build traffic lights into your app.</description>
     <row>

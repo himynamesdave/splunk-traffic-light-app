@@ -1,8 +1,9 @@
 /* Hi! I hope this code lights you up. If not, say hello @himynamesdave / support@splunkstart.com */
 .single-value:before {
     background-repeat: no-repeat;
-    padding-left: -100px;
+    padding-left: 40px;
     padding-top: 16px;
+    max-height:150px;
 }
 
 .severe.single-value:before {
@@ -13,8 +14,8 @@
     background-image: url('../orange-light-118x300.png');
     color: #ffb800;
 }
-.single-value.low {
-    background-image: url('https://raw.githubusercontent.com/himynamesdave/splunk-traffic-light-app/master/appserver/static/green-light-39x100.png');
+.low.single-value:before {
+    background-image: url('https://raw.githubusercontent.com/himynamesdave/splunk-traffic-light-app/master/appserver/static/green-light-118x300.png');
     color: #00b932;
 }
 .icon-only.single-value:before {
@@ -22,4 +23,8 @@
 }
 .icon-only .single-result {
     display: none;
+}
+
+.single-value.low {
+    background-image: url('https://raw.githubusercontent.com/himynamesdave/splunk-traffic-light-app/master/appserver/static/green-light-118x300.png');
 }

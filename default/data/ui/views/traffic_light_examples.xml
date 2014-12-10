@@ -1,0 +1,118 @@
+<dashboard stylesheet="trafficlight.css"> 
+  <label>Traffic Light Examples</label>
+  <description>Build traffic light visualisations into your app using this guide.</description>
+    <row>
+        <single>
+            <title>None</title>
+            <searchString>| stats count as value | eval value = 50 | rangemap field=value none=0-99 low=100-199 elevated=200-299 severe=300-399 default=none</searchString>
+            <earliestTime>-15m</earliestTime>
+            <latestTime>now</latestTime>
+            <option name="classField">range</option>
+            <option name="field">value</option>
+        </single>
+        <single>
+            <title>Low</title>
+            <searchString>| stats count as value | eval value = 150 | rangemap field=value none=0-99 low=100-199 elevated=200-299 severe=300-399 default=none</searchString>
+            <earliestTime>-15m</earliestTime>
+            <latestTime>now</latestTime>
+            <option name="classField">range</option>
+            <option name="field">value</option>
+        </single>
+        <single>
+            <title>Elevated</title>
+            <searchString>| stats count as value | eval value = 250 | rangemap field=value none=0-99 low=100-199 elevated=200-299 severe=300-399 default=none</searchString>
+            <earliestTime>-15m</earliestTime>
+            <latestTime>now</latestTime>
+            <option name="classField">range</option>
+            <option name="field">value</option>
+        </single>
+        <single>
+            <title>Severe</title>
+            <searchString>| stats count as value | eval value = 350 | rangemap field=value none=0-99 low=100-199 elevated=200-299 severe=300-399 default=none</searchString>
+            <earliestTime>-15m</earliestTime>
+            <latestTime>now</latestTime>
+            <option name="classField">range</option>
+            <option name="field">value</option>
+        </single>
+    </row>
+
+    <row>
+        <single>
+            <title>None (icon only)</title>
+            <searchString>| stats count as value | eval value = 50 | rangemap field=value none=0-99 low=100-199 elevated=200-299 severe=300-399 default=none</searchString>
+            <earliestTime>-15m</earliestTime>
+            <latestTime>now</latestTime>
+            <option name="classField">range</option>
+            <option name="field">value</option>
+            <option name="additionalClass">icon-only</option>
+        </single>
+        <single>
+            <title>Low (icon only)</title>
+            <searchString>| stats count as value | eval value = 150 | rangemap field=value none=0-99 low=100-199 elevated=200-299 severe=300-399 default=none</searchString>
+            <earliestTime>-15m</earliestTime>
+            <latestTime>now</latestTime>
+            <option name="classField">range</option>
+            <option name="field">value</option>
+            <option name="additionalClass">icon-only</option>
+        </single>
+        <single>
+            <title>Elevated (icon only)</title>
+            <searchString>| stats count as value | eval value = 250 | rangemap field=value none=0-99 low=100-199 elevated=200-299 severe=300-399 default=none</searchString>
+            <earliestTime>-15m</earliestTime>
+            <latestTime>now</latestTime>
+            <option name="classField">range</option>
+            <option name="field">value</option>
+            <option name="additionalClass">icon-only</option>
+        </single>
+        <single>
+            <title>Severe (icon only)</title>
+            <searchString>| stats count as value | eval value = 350 | rangemap field=value none=0-99 low=100-199 elevated=200-299 severe=300-399 default=none</searchString>
+            <earliestTime>-15m</earliestTime>
+            <latestTime>now</latestTime>
+            <option name="classField">range</option>
+            <option name="field">value</option>
+            <option name="additionalClass">icon-only</option>
+        </single>
+    </row>
+
+    <row>
+        <html>
+            <h1>And here's how it's done...</h1>
+            <h2>Overview</h2>
+            <p>These example use Splunk's "<a href="http://docs.splunk.com/Documentation/Splunk/6.2.0/SearchReference/Rangemap" target="_blank">rangemap</a>" command to display traffic lights that alternate depending on the threshold level set within the search.</p>
+            <p>We use a "<a href="http://docs.splunk.com/Documentation/Splunk/6.2.0/Viz/Visualizationreference#Single-value_visualizations" target="_blank">single value</a>" panel to display the output of the search using the default rangemap config.</p>
+            <p>In the stylesheet we attach the different traffic light images to the default rangemap classes.</p>
+            <hr />
+            <h2>The CSS</h2>
+            <p>All images and CSS stored in:</p>
+            <pre>$SPLUNKAPP/appserver/static</pre>
+            <p>trafficlight.css</p>
+            <pre>
+.single-value {
+     background-repeat: no-repeat;
+     padding-left: 60px; /* Push the text over so that it doesn't sit on top of the image. Change this according to the dimensions of your image. */
+     padding-top: 40px;
+     height:100px;
+}
+
+.single-value.low{
+     background-image: url('green-light-39x100.png'); /* Replace with your image if you want. See http://goo.gl/yxW7O */
+ }
+ .single-value.elevated{
+     background-image: url('orange-light-39x100.png');
+ }
+  .single-value.severe{
+     background-image: url('red-light-39x100.png');
+ }
+  .single-value.none{
+     background-image: url('none-light-39x100.png');
+ }
+ .icon-only .single-result {
+    display: none; /* Add this class to display just the image (no number) */
+}
+        </pre>
+        <p>You'll also find .PSD files for traffic lights here:</p>
+        <pre>$SPLUNKAPP/static/raw-graphics</pre>
+        </html>
+    </row>
+</dashboard>

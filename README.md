@@ -1,4 +1,4 @@
-splunk-traffic-light-app
+Splunk Traffic Light Visualisations
 ========================
 
-Examples of how to build traffic lights into your Splunk app.
+A simple demo app showing you how to build traffic light visualisations into your Splunk app. What a bright idea!
